@@ -3,12 +3,14 @@ const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
 btn.addEventListener('click', function() {
-    //get random number between 0 -3 colors [0]
-    const randomNumber = 2;
+    //get random number between 0 -3 colors
+    const randomNumber = getRundomNumber();
+    console.log(randomNumber);
+
     document.body.style.backgroundColor = colors[randomNumber];
     color.textContent = colors[randomNumber];
 });
 
 function getRundomNumber() {
-    return Math.random();
+    return Math.floor(Math.random() * colors.length);
 }
